@@ -38,7 +38,11 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
+  # Session commands to run at startup.         
+  services.xserver.displayManager.sessionCommands = "
+  # set the wallpaper
+  feh --bg-fill --randomize /home/cookie/Wallpapers/*    
+  ";
   # Select internationalisation properties.
    i18n.defaultLocale = "en_GB.UTF-8";
    console = {
@@ -92,9 +96,7 @@
        tree
      ];
    };
-
    programs.firefox.enable = true;
-     
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
