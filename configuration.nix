@@ -41,7 +41,9 @@
   # Session commands to run at startup.         
   services.xserver.displayManager.sessionCommands = "
   # set the wallpaper
-  feh --bg-fill --randomize /home/cookie/Wallpapers/*    
+  feh --bg-fill --randomize /home/cookie/Wallpapers/* 
+  # run oneko
+  oneko &       
   ";
   # Select internationalisation properties.
    i18n.defaultLocale = "en_GB.UTF-8";
@@ -52,24 +54,14 @@
    };
 
   # Enable the X11 windowing system.
-   services.xserver =  {
-   enable = true;
-     desktopManager = {
-   xterm.enable = false;
-};
+  services.xserver = {
+    enable = true;
+    windowManager.i3.enable = true;
+  };
+  services.displayManager = {
+    defaultSession = "none+i3";
+  };
 
- displayManager = {
-       defaultSession = "none+i3";
-};
- windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
- dmenu
- i3status
- i3blocks
-  ];
- };
-};
   # Configure keymap in X11
    services.xserver.xkb.layout = "gb";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -117,7 +109,9 @@
      htop
      wget
      git
-     hyfetch     
+     hyfetch
+    # miscellaneous
+     oneko     
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
