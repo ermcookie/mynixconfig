@@ -98,18 +98,24 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
+    # text editors
+     vim
      emacs
+     vscode
+    # browsers
      firefox
+    # i3
      polybar
      picom
      dmenu
      feh
-     git   
+    # terminal emulators  
      alacritty
-     hyfetch
-     vscode
+    # utilities
+     htop
+     wget
+     git
+     hyfetch     
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
