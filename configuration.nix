@@ -61,7 +61,16 @@
   services.displayManager = {
     defaultSession = "none+i3";
   };
-
+  # Picom compositor for transparency and effects
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    activeOpacity = 0.9;
+    inactiveOpacity = 0.8;
+    shadow = false;
+    fade = false;
+    vSync = false;
+  };
   # Configure keymap in X11
    services.xserver.xkb.layout = "gb";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -111,7 +120,11 @@
      git
      hyfetch
     # miscellaneous
-     oneko     
+     oneko    
+     flameshot
+     pipes-rs
+    # compilers
+     gcc 
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
