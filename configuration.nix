@@ -44,6 +44,8 @@
   feh --bg-fill --randomize /home/cookie/Wallpapers/* 
   # run oneko
   oneko &       
+  # run polybar 
+  exec polybar -c ~/.config/polybar/config.ini
   ";
   # Select internationalisation properties.
    i18n.defaultLocale = "en_GB.UTF-8";
@@ -124,7 +126,10 @@
      flameshot
      pipes-rs
     # compilers
-     gcc 
+     gcc
+     clang 
+     ghc 
+     nodejs
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
